@@ -66,6 +66,7 @@ public class Operators {
         System.out.println("e & f: " + (e & f));   // 비트 AND
         System.out.println("e | f: " + (e | f));   // 비트 OR
         System.out.println("e ^ f: " + (e ^ f));   // 비트 XOR
+        // XOR : 두 비트가 다르면 1, 같으면 0을 결과로 만든다.
         System.out.println("~e: " + (~e));         // 비트 NOT
         System.out.println("e << 1: " + (e << 1)); // 왼쪽 시프트
         System.out.println("e >> 1: " + (e >> 1)); // 오른쪽 시프트

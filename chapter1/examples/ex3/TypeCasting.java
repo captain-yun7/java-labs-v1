@@ -3,10 +3,12 @@ package chapter1.examples.ex3;
 /**
  * 자바의 형변환(Type Casting) 예제
  */
-public class TypeCasting {
+public class    TypeCasting {
     public static void main(String[] args) {
         // 1. 자동 형변환(Implicit Casting, 프로모션)
         // 작은 타입에서 큰 타입으로 자동 변환됨
+        // - 기본 타입 크기 순서
+        //      - byte < short < int < long < float < double
         System.out.println("===== 자동 형변환 =====");
         byte byteValue = 10;
         int intValue = byteValue;  // byte -> int 자동 형변환
@@ -40,6 +42,17 @@ public class TypeCasting {
         byteValue = (byte) intValue;    // int -> byte 명시적 형변환 (범위 초과로 값 손실)
         System.out.println("int 값: " + intValue);
         System.out.println("byte 값: " + byteValue);  // byte 범위(-128~127)를 벗어나 오버플로우 발생
+        //이 8비트 10000001을 byte 타입(부호 있는 8비트) 으로 해석하면?
+        //
+        //첫 번째 비트가 1 → 음수다!
+        //
+        //이진수 10000001을 2의 보수로 해석하면:
+        //
+        //반전: 01111110
+        //
+        //+1: 01111111 (10진수로 127)
+        //
+        //그래서 -127이 된다.
         
         long longValue2 = 10000000000L;
         intValue = (int) longValue2;    // long -> int 명시적 형변환 (범위 초과로 값 손실)
